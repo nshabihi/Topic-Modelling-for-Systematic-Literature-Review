@@ -318,3 +318,60 @@ del_list_topic_improvement=['topic','model','decision','knowledge','information_
 
 print("the word number for topic_improvement: " + str(len(del_list_topic_improvement)))
 data_lemmatized = remove_words(data_lemmatized, del_list_topic_improvement)
+
+
+
+################### Editing some features 
+# replace some features
+replace_dict = {
+    "curriculumr" : "curriculum",
+    "predictionor" : "prediction",
+    "predictione" : "prediction",
+    "predictionion" : "prediction",
+    "predictionive" : "prediction",
+    "selfregulate" : "self_regulated",
+    "selfregulation" : "self_regulated",
+    "online_learne" : "online_learning",
+    'onlineonlinelearne' : "online_learning",
+    'data_mine' : "data_mining",
+    'machine_learne' : 'machine_learning',
+    'decisionmake' : 'decision_making',
+    'hadoopbase' : 'hadoop',
+    'cloudbased': 'cloud',
+    'lmss' :  'lms',
+    'adaptivelearningenvironment' : 'adaptive_learning',
+    'adaptive_learne' : 'adaptive_learning',
+    'classroomlike' : 'classroom',
+    'scaling' : 'scale',
+    'modalities' : 'modality',
+    'modalmodality' : 'modality',
+    'egovernance' : 'governance',
+    'inclassroom' : 'classroom',
+    'multicultural' : 'culture',
+    'behaviorism' : 'behaviorist',
+    'eassessment' : 'assessment',
+    'unsupervised_learning' : 'unsupervised_learne',
+    'supervised_learning' : 'supervised_learne',
+    'enrollment' : 'enrol',
+    'enrolment' : 'enrol',
+    'enrolled' : 'enrol',
+    'lad' : 'dashboard',
+    'ebookbase' : 'ebook',
+    'threaten' : 'threat',
+    'videoclickstream' : 'video clickstream',
+    'technologyenhanced' : 'technology_enhanced_learning' 
+
+}
+
+#Word replace
+rejoined_docs = []
+for item in data_lemmatized:
+    words = item
+    j = " ".join(words)
+    rejoined_docs.append(j)
+
+rejoined_docs = (multiple_replace(replace_dict, rejoined_docs))    
+data_lemmatized = list(sent_to_words(rejoined_docs))
+#check:
+#print(data_lemmatized[0])
+
