@@ -4,13 +4,13 @@ from pybtex.database.input import bibtex
 import pandas as pd
 import re
 
-bib_files = ["D:/MYT/BIG data and LA paper/acm.bib",
-             "D:/MYT/BIG data and LA paper/IEEE-1.bib",
-             "D:/MYT/BIG data and LA paper/IEEE-2.bib",
-             "D:/MYT/BIG data and LA paper/ScienceDirect.bib",
-             "D:/MYT/BIG data and LA paper/scopus.csv",
-             "D:/MYT/BIG data and LA paper/wos.csv",
-             "D:/MYT/BIG data and LA paper/eric.bib"
+bib_files = ["D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/acm.bib",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/IEEE-1.bib",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/IEEE-2.bib",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/ScienceDirect.bib",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/scopus.csv",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/wos.csv",
+             "D:/Topic-Modelling-for-Systematic-Literature-Review-main/dataset/eric.bib"
             ]
 
 title = []
