@@ -94,7 +94,8 @@ def draw_adjacency_matrix(G, node_order=None, partitions=[], colors=[]):
 ### draw simple adjacancy matrix
 from scipy import io
 #use doc_doc_adj.csv to create the following .mtx file
-A = io.mmread("D:/s3rmt3m1.mtx")
+
+A = io.mmread("D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/adjacency(doc-doc).mtx")
 G = nx.from_scipy_sparse_matrix(A)
 draw_adjacency_matrix(G)
 
@@ -115,7 +116,7 @@ def assignmentArray_to_lists(assignment_array):
 
 ## Load in array which maps node index to dorm number
 ## Convert this to a list of lists indicating dorm membership
-dorm_assignment = np.genfromtxt("D:/Bubble.txt", dtype="u4")
+dorm_assignment = np.genfromtxt("D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/Topics.txt", dtype="u4")
 
 dorm_lists = assignmentArray_to_lists(dorm_assignment)
 
