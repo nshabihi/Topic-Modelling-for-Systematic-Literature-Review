@@ -33,7 +33,7 @@ df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contri
 
 # Show
 df_dominant_topic.head(10)
-df_dominant_topic.to_csv (r'D:/MYT/BIG data and LA paper/Analysis files/topic-text_association.csv', index = False, header=True)
+df_dominant_topic.to_csv (r'D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/topic-text_association.csv', index = False, header=True)
 
 
 
