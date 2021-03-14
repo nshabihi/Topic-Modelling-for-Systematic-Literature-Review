@@ -29,7 +29,7 @@ for word in word_list_unique:
     word_score.append(word_score_dict[word][0]*2000)
 
 df_nodes = pd.DataFrame({"name": word_list_unique, "group": word_topic , "nodesize":word_score})
-df_nodes.to_csv (r'D:/MYT/BIG data and LA paper/Analysis files/nodes.csv', index = False, header=True)
+df_nodes.to_csv (r'D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/nodes.csv', index = False, header=True)
 
 ## make source destination csv ##
 ### cosine for words
@@ -65,7 +65,7 @@ for i in range(len(tdm_word_list)):
             target.append(tdm_word_list[j])
 
 df_source_target = pd.DataFrame({"source": source, "target": target , "value":sim})
-df_source_target.to_csv (r'D:/MYT/BIG data and LA paper/Analysis files/df_source_target.csv', index = False, header=True)
+df_source_target.to_csv (r'D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/df_source_target.csv', index = False, header=True)
 
 ################################################
 ###### Draw Network
@@ -80,8 +80,8 @@ warnings.filterwarnings('ignore')
 
 #load data: instead of reading from file, you can simply set data from above variables: "df_nodes" and "df_source_target"
 G = nx.Graph(day="Stackoverflow")
-df_nodes = pd.read_csv('D:/MYT/BIG data and LA paper/Analysis files/nodes.csv')
-df_edges = pd.read_csv('D:/MYT/BIG data and LA paper/Analysis files/df_source_target.csv')
+df_nodes = pd.read_csv('D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/nodes.csv')
+df_edges = pd.read_csv('D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/df_source_target.csv')
 
 
 for index, row in df_nodes.iterrows():
