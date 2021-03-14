@@ -40,11 +40,11 @@ print("s:   "+str(s/((len(cosine_doc)*len(cosine_doc)))))
 n= len(cosine_doc)
 m=n+1
 df_doc = pd.DataFrame({str(m): doc1, str(n): doc2 , str(d):value})
-#df_doc.to_csv (r'D:/MYT/BIG data and LA paper/Analysis files/doc_doc_adj.csv', index = False, header=True)
+#df_doc.to_csv (r'D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/doc_doc_adj.csv', index = False, header=True)
 
 
 df_topic_docs = df_dominant_topic['Dominant_Topic']
-#df_topic_docs.to_csv (r'D:/MYT/BIG data and LA paper/Analysis files/doc_topic_association.csv', index = False, header=True)
+#df_topic_docs.to_csv (r'D:/Topic-Modelling-for-Systematic-Literature-Review-main/Analysis files/doc_topic_association.csv', index = False, header=True)
 
 
 
