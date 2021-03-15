@@ -5,7 +5,7 @@ def sent_to_words(sentences):
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=False, min_len=3, max_len= 40))  # deacc=True removes punctuations
 
 data_words = list(sent_to_words(data))
-print(data_words[30])
+#print(data_words[30])
 
 #### CKECK bigrams and 3-grams!
 # Build the bigram and trigram models
@@ -19,7 +19,7 @@ bigram_mod = gensim.models.phrases.Phraser(bigram)
 trigram_mod = gensim.models.phrases.Phraser(trigram)
 
 # See trigram example
-print(trigram_mod[bigram_mod[data_words[0]]])
+#print(trigram_mod[bigram_mod[data_words[0]]])
 
 # show 3-grams
 d = 0 
@@ -33,11 +33,11 @@ for doc in new_set:
 show_3grams_dict = {i:(show_3grams.count(i)+1) for i in show_3grams} 
 show_3grams_dict_sorted = {k: v for k, v in sorted(show_3grams_dict.items(), key=lambda item: item[1])}
 
-print(len(show_3grams_dict_sorted))
+#print(len(show_3grams_dict_sorted))
 keys = []
 for key in show_3grams_dict_sorted:
     keys.append(key)
-
+Print("3grams:")
 print(show_3grams_dict_sorted)
 
 
@@ -53,9 +53,9 @@ for doc in new_set:
 show_bigrams_dict = {i:(show_bigrams.count(i)+1) for i in show_bigrams} 
 show_bigrams_dict_sorted = {k: v for k, v in sorted(show_bigrams_dict.items(), key=lambda item: item[1])}
 
-print(len(show_bigrams_dict_sorted))
+#print(len(show_bigrams_dict_sorted))
 keys = []
 for key in show_bigrams_dict_sorted:
     keys.append(key)
-
+print("bi-garms:")
 print(show_bigrams_dict_sorted)
