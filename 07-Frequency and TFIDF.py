@@ -17,12 +17,13 @@ for col, term in enumerate(terms):
     
 ranking = pd.DataFrame(a, columns=['term','rank'])
 ranked_terms_tfidf = (ranking.sort_values('rank', ascending=False))
-print("all words:  " + str(len(ranked_terms_tfidf)))
+#print("all words:  " + str(len(ranked_terms_tfidf)))
+print("first 50 words based on TFIDF ranks :  ")
 print(ranked_terms_tfidf[0:49])
 print("//////////")
-print(ranked_terms_tfidf.iloc[0 ,0])
-print(ranked_terms_tfidf.iloc[0,1])
-print("//////////")
+#print(ranked_terms_tfidf.iloc[0 ,0])
+#print(ranked_terms_tfidf.iloc[0,1])
+#print("//////////")
 list_tfidf = []
 list_tfidf2 = []
 for i in range(len(ranked_terms_tfidf)):
@@ -30,17 +31,18 @@ for i in range(len(ranked_terms_tfidf)):
         list_tfidf.append(ranked_terms_tfidf.iloc[i,0])
     elif 0.49<ranked_terms_tfidf.iloc[i,1]<1.01:
         list_tfidf2.append(ranked_terms_tfidf.iloc[i,0])
-print("TFIDF lists:")
+print("TFIDF lists 0 - 0.25:")
 print(list_tfidf)
+print("TFIDF lists 0.49 - 1:")
 print(list_tfidf2)
 print("////////////")
 
-##import matplotlib.pyplot as plt
-#plt.plot((ranked_terms_tfidf.iloc[: ,0]),(ranked_terms_tfidf.iloc[: ,1]))
-#plt.title('TFIDF')
-#plt.xlabel('xAxis name')
-#plt.ylabel('yAxis name')
-#plt.show()
+import matplotlib.pyplot as plt
+plt.plot((ranked_terms_tfidf.iloc[: ,0]),(ranked_terms_tfidf.iloc[: ,1]))
+plt.title('TFIDF')
+plt.xlabel('xAxis name')
+plt.ylabel('yAxis name')
+plt.show()
 
 
 #create dtm
@@ -62,7 +64,7 @@ ranked_terms_freq = ranking.sort_values('rank', ascending=False)
 
 
 
-print("all: " + str(len(ranked_terms_freq)))
+#print("all: " + str(len(ranked_terms_freq)))
 #delete low_frequent words
 
 def word_removal(texts):
@@ -79,46 +81,46 @@ for i in range(len(ranked_terms_freq)):
     elif  99<ranked_terms_freq.iloc[i]['rank']:
         my_list1.append(ranked_terms_freq.iloc[i]['term'])
         
-print("//////////count list-1:   "+str(len(del_list)))
-print(del_list)
-print("//////////count list-2:  "+str(len(my_list)))
-print(my_list)
-print("//////////count list-3:  "+str(len(my_list1)))
-print(my_list1)
+#print("//////////count list-1:   "+str(len(del_list)))
+#print(del_list)
+#print("//////////count list-2:  "+str(len(my_list)))
+#print(my_list)
+#print("//////////count list-3:  "+str(len(my_list1)))
+#print(my_list1)
 #data_lemmatized = word_removal(data_lemmatized)
-
-print(ranked_terms_freq[200:249])
+print("first 50 words based on frequency ranks :  ")
+print(ranked_terms_freq[0:49])
 
 #frequency plot
-#plt.plot((ranked_terms_freq.iloc[: ,0]),(ranked_terms_freq.iloc[: ,1]))
-#plt.title('frequency')
-#plt.xlabel('xAxis name')
-#plt.ylabel('yAxis name')
-#plt.show()
+plt.plot((ranked_terms_freq.iloc[: ,0]),(ranked_terms_freq.iloc[: ,1]))
+plt.title('frequency')
+plt.xlabel('xAxis name')
+plt.ylabel('yAxis name')
+plt.show()
 
 
 
-print("++++++++++")
+#print("++++++++++")
 n = 0
 for i in range(len(ranked_terms_freq)):
     if ("_" in ranked_terms_freq.iloc[i,0]):
-        print(ranked_terms_freq.iloc[i,0])
+        #print(ranked_terms_freq.iloc[i,0])
         n += 1
 #print (n)
 
-print("++++++++++")
+#print("++++++++++")
 word_list = []
 for i in range(len(ranked_terms_freq)):
     word_list.append(ranked_terms_freq.iloc[i,0])
-print (word_list)
+#print (word_list)
 
 
 #RUN if want to check the number of keywords in a doc
 n = 0
 for i in range(len(data_lemmatized)):
     if len(data_lemmatized[i]) < 4:
-        print(str(i)+ " :   "+ str(len(data_lemmatized[i])))
-        print(data_lemmatized[i])
+        #print(str(i)+ " :   "+ str(len(data_lemmatized[i])))
+        #print(data_lemmatized[i])
         n += 1
         
-print(n)
+#print(n)
